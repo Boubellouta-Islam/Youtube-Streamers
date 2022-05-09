@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --width: 300px;
+            --cols: 3;
+            --gap: 6px;
+        }
+        body {
+            background: #1e1e1e;
+            width: var(--width);
+            height: fit-content;
+        }
+        .container{
+            height: fit-content;
+            display: grid;
+            grid-template-columns: repeat(var(--cols), 1fr);
+            gap: var(--gap);
+            margin-bottom: 1rem;
+        }
+        .channel{
+            cursor: pointer;
+            aspect-ratio: 1;
+            height: calc(var(--width)/var(--cols) - var(--gap));
+        }
+        .channel img{
+            border-radius: 5px;
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+        }
+        .action{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .action button{
+            background: rgb(243, 87, 161);
+            color: white;
+            padding: .5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid white;
+        }
+        .action #rm{
+            background: gray;
+            margin-left: .5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="all-channel" class="container">
+        
+    </div>
+    <div class="action">
+        <button id="launch">launch</button>
+        <button id="rm">remove</button>
+    </div>
+    <script src="window.js">
+    </script>
+</body>
+</html>
